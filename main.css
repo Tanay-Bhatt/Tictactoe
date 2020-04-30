@@ -201,7 +201,7 @@ body{
 }
 
 #lvt{
-/* 	transform: translate(25%); */
+	transform: translate(-25%);
 }
 
 #vs_player, #vs_ai, #xtoken, #otoken, #axtoken, #aotoken{
