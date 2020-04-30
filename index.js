@@ -4,7 +4,7 @@ window.onload = ()=> {
 		loader.addEventListener('click', function() {
 			document.body.removeChild(this);
 		})
-	}, 500);
+	}, 2000);
 
 
 	var ailevel = 0;
