@@ -1,0 +1,370 @@
+:root{
+	--pcolor:#222;
+	--scolor:#eee;
+	--acolor:#444;
+}
+
+*{
+	transition: .5s;
+}
+
+body{
+	margin:0;
+}
+
+
+#loader{
+    position:absolute;
+    height:100vh;
+    width:100vw;
+    background:#222;
+    z-index:999;
+}
+
+#blc{
+    position:fixed;
+    top:50vh;
+    left:50vw;
+    transform:translate(-50%, -50%); 
+    border:1vh solid #088;
+    border-width:.5vh 0 .5vh 0;
+    width:0vh;
+    height:0vh;
+    white-space:nowrap;
+    overflow:hidden;
+    animation:tow 2s linear,
+    load 6s 2s linear infinite;
+    animation-fill-mode:forwards;
+}
+
+#ltext{
+    color:#eee;
+    font-size:5vh;
+    font-weight:bold;
+    position:absolute;
+    top:50%;
+    text-transform:uppercase;
+    left:50%;
+    transform:translate(-50%, -50%);
+}
+
+
+@keyframes tow{
+    to{
+        width:35vh;
+    }
+}
+
+@keyframes load{
+    20%{
+        height:10vh;
+    }
+   
+    40%{
+        height:10vh;
+    }
+   
+    60%{
+        height:0vh;
+        transform:translate(-50%, -50%) rotate(0deg);
+       
+    }
+   
+    100%{
+        transform:translate(-50%, -50%) rotate(180deg);
+       
+    }
+}
+
+#lt{
+    color:#fff;
+    position:absolute;
+    bottom:10vh;
+    left:50%;
+    transform:translate(-50%);
+    font-weight:bold;
+    font-size:3vh;
+    animation:blink .1s alternate infinite;
+    display:none;
+}
+
+@keyframes blink{
+    to{opacity:0.6;}
+}
+
+#main, #game, #tokenselect, #tokenselectai, #levels{
+	height: 100vh;
+	width: 100vw;
+	position: absolute;
+	text-align: center;
+	background: var(--pcolor);
+}
+
+#tokenselect,#game, #tokenselectai, #levels{
+	display: none;
+}
+
+#theme, #sound, #reset{
+	height: 8vh;
+	width: 8vh;
+	background: var(--pcolor);
+	position: fixed;
+	z-index: 2;
+	bottom: 2vh;
+	left: 5vh;
+	box-shadow: 0 0 .5vh var(--acolor);
+	font-size: 5vh;
+	text-align: center;
+	line-height: 8vh;
+	color:var(--scolor);
+}
+
+#result{
+	height: 25vmin;
+	width: 70vmin;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border: 2vh;
+	background: var(--pcolor);
+	box-shadow: 0 0 1vh var(--acolor);
+	text-align: center;
+	display: none;
+
+}
+
+.drop{
+	height: .5vh;
+	width: .5vh;
+	border-radius: 50%;
+	position: absolute;
+	background:var(--acolor);
+	opacity: .6;
+	animation: drop .6s linear;
+}
+
+@keyframes drop{
+	to{
+		height: 8vh;
+		width: 8vh;
+		transform: translate(-50%, -50%);
+		opacity: 0;
+	}
+}
+
+#cont{
+	position: absolute;
+	height: 20%;
+	width: 20%;
+	background: #088;
+	color: var(--scolor);
+	border-radius: 1vmin;
+	font-size: 4vmin;
+	line-height:5vmin;
+	bottom: 2vmax;
+	left: 85%;
+	transform:translate(-50%);
+}
+
+#rtext{
+	font-size: 4vmin;
+	font-weight: bold;
+	margin-top: 5vmin;
+	color: var(--scolor);
+}
+
+#sound{
+	left: 14vh;
+}
+
+#reset{
+	left: 23vh;
+	display: none;
+}
+
+#theme:hover, #reset:hover, #sound:hover{
+	box-shadow: 0 0 1vh var(--acolor);
+}
+
+.text{
+	color: var(--scolor);
+	font-size: 4vh;
+	padding: .5vh;
+	font-weight: bold;
+	position: fixed;
+	top:10vh;
+	transform: translate(-50%);
+	border-bottom:solid .5vh #088;
+}
+
+#lvt{
+	transform: translate(25%);
+}
+
+#vs_player, #vs_ai, #xtoken, #otoken, #axtoken, #aotoken{
+	height: 15vh;
+	width: 15vh;
+	background: var(--pcolor);
+	position: absolute;
+	top: 50vh;
+	box-shadow: 0 0 .5vh var(--acolor);
+	font-size: 8vh;
+	text-align: center;
+	line-height: 15vh;
+	color:var(--scolor);
+}
+
+#vs_player, #xtoken, #axtoken{
+	left: 45%;
+	transform: translate(-100%, -50%);
+}
+
+.times{
+	height: 8vh;
+	width: 8vh;
+	background: var(--acolor);
+	opacity: .4;
+	position: absolute;
+	border-radius: 50% ;
+	top: 2vh;
+	left: 2vh;
+}
+
+.times::after{
+	content: 'X';
+	font-size: 3vh;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: var(--scolor);
+}
+
+#vs_player::after{
+	content: 'VS Player';
+	white-space: nowrap;
+	transform: translate(-50%);
+	position: absolute;
+	left: 50%;
+	bottom:-10vh;
+	color: var(--scolor);
+	font-size: 2vh;
+	font-weight: bold;
+
+}
+
+#vs_ai, #otoken, #aotoken{
+	right: 45%;
+	transform: translate(100%, -50%);
+}
+
+#vs_ai::after{
+	content: 'VS AI';
+	white-space: nowrap;
+	transform: translate(-50%);
+	left: 50%;
+	font-weight: bold;
+	position: absolute;
+	bottom:-10vh;
+	color: var(--scolor);
+	font-size: 2vh;
+
+}
+
+.level{
+	height: 20vmin;
+	width: 20vmin;
+	background: var(--pcolor);
+	margin-top: 50vh;
+	transform: translate(0, -50%);
+	box-shadow: 0 0 .5vh var(--acolor);
+	font-size: 15vmin;
+	display: inline-grid;
+	margin-left:5vmin;
+	text-align: center;
+	line-height: 20vmin;
+	color:var(--scolor);
+}
+
+.fa-microchip{
+	margin-top: 50%;
+	transform:translate(0, -50%);
+}
+
+#novice{
+	margin-left:0vh;
+}
+
+#novice::after{
+	content: 'NOVICE';
+	white-space: nowrap;
+	transform: translate(-50%);
+	left: 50%;
+	font-weight: bold;
+	position: absolute;
+	bottom:-15vmin;
+	color: var(--scolor);
+	font-size: 4vmin;
+}
+
+#master::after{
+	content: 'MASTER';
+	white-space: nowrap;
+	transform: translate(-50%);
+	left: 50%;
+	font-weight: bold;
+	position: absolute;
+	bottom:-15vmin;
+	color: var(--scolor);
+	font-size: 4vmin;
+}
+
+#grandmaster::after{
+	content: 'BEAST';
+	white-space: nowrap;
+	transform: translate(-50%);
+	left: 50%;
+	font-weight: bold;
+	position: absolute;
+	bottom:-15vmin;
+	color: var(--scolor);
+	font-size: 4vmin;
+}
+
+#board{
+	height: 38vh;
+	width: 38vh;
+	filter: blur(.1vh);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform:translate(-50%, -50%);
+	background: linear-gradient(90deg, transparent 0vh 11.9vh, var(--scolor) 11.9vh 12.1vh, transparent 12.1vh 24.9vh, var(--scolor) 24.9vh 25.1vh, transparent 25.1vh),
+				linear-gradient(180deg, transparent 0vh 11.9vh, var(--scolor) 11.9vh 12.1vh, transparent 12.1vh 24.9vh, var(--scolor) 24.9vh 25.1vh, transparent 25.1vh);
+
+	/*opacity:.5;*/
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+}
+
+#board::after{
+	content: '';
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background: var(--scolor);
+	opacity: .05;
+}
+
+.check{
+	height: 12.6vh;
+	width: 12.6vh;
+	border:none;
+	outline: none;
+	background:transparent;
+	font-size: 7vh;
+	font-weight: bold;
+	z-index: 990;
+	color: var(--scolor);
+}

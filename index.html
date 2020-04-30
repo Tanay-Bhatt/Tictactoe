@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>tic tac toe</title>
+	<script type="text/javascript" src='index.js'></script>
+	<link rel="stylesheet" type="text/css" href="main.css" />
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+</head>
+<body onselectstart="return false">
+	<div id="loader">
+		<div id="blc">
+			<span id="ltext">Tic tac toe</span>
+		</div>
+		<div id="lt">Tap to start...</div>
+	</div>
+
+	<div id="main">
+		
+		<span class="text">Tic Tac Toe</span>
+
+		<div id="theme">
+			<i class="fa fa-sun-o"></i>
+		</div>
+		<div id="reset">
+			<i class="fa fa-refresh"></i>
+		</div>
+		<div id="sound">
+			<i class="fa fa-volume-up"></i>
+		</div>
+
+		<div id="vs_player">
+			<i class="fa fa-user"></i>
+		</div>
+
+		<div id="vs_ai">
+			<i class="fa fa-microchip"></i>
+		</div>
+		
+		<div id="tokenselect">
+			
+			<span class="text">Player 1's Token</span>
+			<div class="times"></div>
+			<div id="xtoken">
+				X
+			</div>
+			<div id="otoken">
+				O
+			</div>
+		</div>
+
+		<div id="tokenselectai">
+			<span class="text">Select your Token</span>
+			<div class="times"></div>
+			<div id="axtoken">
+				X
+			</div>
+			<div id="aotoken">
+				O
+			</div>
+		</div>
+
+		<div id="levels">
+			<span class="text" id='lvt'>Select difficulty level</span>
+			<div class="times"></div>
+			<div class="level" id='novice'>
+				<div class="fa fa-microchip"></div>
+			</div>
+			<div class="level" id='master'>
+				<div class="fa fa-microchip"></div>
+			</div>
+			<div class="level" id='grandmaster'>
+				<div class="fa fa-microchip"></div>
+			</div>
+		</div>
+
+		<div id="game">
+			<span class="text" id='gamet'></span>
+			<div class="times"></div>
+			<div id="board"></div>
+		</div>
+
+		<div id="result">
+			<div id="rtext">No One Wins >_< </div>
+			<div id="cont">OK</div>
+		</div>
+
+
+
+	</div>
+
+	<audio src="http://soundbible.com/grab.php?id=1705&type=mp3" id='click'></audio>
+	<audio src="http://soundbible.com/grab.php?id=1771&type=mp3" id="novicea"></audio>
+	<audio src="http://soundbible.com/grab.php?id=1569&type=mp3" id="beasta"></audio>
+	<audio src="http://soundbible.com/grab.php?id=1770&type=mp3" id="mastera"></audio>
+	<audio src="http://soundbible.com/grab.php?id=2156&type=mp3" id="alerta"></audio>
+</body>
+</html>
