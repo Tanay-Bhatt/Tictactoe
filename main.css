@@ -191,7 +191,7 @@ body{
 
 .text{
 	color: var(--scolor);
-	font-size: 3.5vh;
+	font-size: 3.5vmin;
 	padding: .5vh;
 	font-weight: bold;
 	position: fixed;
